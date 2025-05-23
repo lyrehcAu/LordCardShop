@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Navbar.Master.cs" Inherits="LordCardShop.Master.NavigationBar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div>
+                <asp:Panel ID="customerNavbar" runat="server" Visible="false">
+                        <a href="Home.aspx">Home</a>
+                        <a href="OrderCard.aspx">Order Card</a>
+                        <a href="Profile.aspx">Profile</a>
+                        <a href="History.aspx">History</a>
+                        <a href="Cart.aspx">Cart</a>
+                        <asp:LinkButton ID="logoutBtnCustomer" runat="server" Text="Logout" OnClick="logoutBtn_Click" CausesValidation="false" />
+                    </asp:Panel>
+                    <asp:Panel ID="adminNavbar" runat="server" Visible="false">
+                        <a href="Home.aspx">Home</a>
+                        <a href="ManageCard.aspx">Manage Card</a>
+                        <a href="History.aspx">Transaction History</a> 
+                        <a href="TransactionReport.aspx">Transaction Report</a>
+                        <a href="OrderQueue.aspx">Order Queue</a>
+                        <a href="Profile.aspx">Profile</a> 
+                        <asp:LinkButton ID="logoutBtnAdmin" runat="server" Text="Logout" OnClick="logoutBtn_Click" CausesValidation="false" />
+                    </asp:Panel>
+            </div>
+            <div class="user-info">
+                <asp:Label ID="welcomeUserLbl" runat="server" Text="Guest"></asp:Label>
+            </div>
+            <div class="search-bar">
+                <asp:TextBox ID="searchTb" runat="server" placeholder="Search card by name..."></asp:TextBox>
+                <asp:Button ID="searchBtn" runat="server" Text="Search" OnClick="searchBtn_Click" />
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
