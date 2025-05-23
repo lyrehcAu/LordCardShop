@@ -24,7 +24,7 @@ namespace LordCardShop.Controller
                 errorMessage = "Email must contain '@'";
                 return false;
             }
-            if (password.Length >= 8 || !password.Any(char.IsLetter) || !password.Any(char.IsDigit))
+            if (password.Length < 8 || !password.Any(char.IsLetter) || !password.Any(char.IsDigit))
             {
                 errorMessage = "Password must be at least 8 characters and alphanumeric ";
                 return false;
